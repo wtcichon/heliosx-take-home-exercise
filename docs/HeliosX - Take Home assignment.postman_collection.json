@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "700927ae-3906-4dec-bf6e-385465e1639e",
+		"name": "HeliosX - Take Home assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5439505"
+	},
+	"item": [
+		{
+			"name": "Get Questions",
+			"item": [
+				{
+					"name": "Get Questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/1/consultation/questions",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1",
+								"consultation",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Request Consultation",
+			"item": [
+				{
+					"name": "Request Succeed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"answers\": [\r\n        {\r\n            \"questionId\": \"d3be7310-d52a-451a-86f3-a34297216fc8\",\r\n            \"answer\": \"true\"\r\n        },\r\n        {\r\n            \"questionId\": \"fd434b60-9704-499f-8a95-165c9eca29d0\",\r\n            \"answer\": \"true\"\r\n        },\r\n        {\r\n            \"questionId\": \"3659a568-2719-4cec-b42c-9e7e2e488218\",\r\n            \"answer\": \"false\"\r\n        },\r\n        {\r\n            \"questionId\": \"56b09455-33a9-4c41-94e1-86309f092a2d\",\r\n            \"answer\": \"false\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1/consultation",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1",
+								"consultation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request Fails",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"answers\": [\r\n        {\r\n            \"questionId\": \"d3be7310-d52a-451a-86f3-a34297216fc8\",\r\n            \"answer\": \"false\"\r\n        },\r\n        {\r\n            \"questionId\": \"fd434b60-9704-499f-8a95-165c9eca29d0\",\r\n            \"answer\": \"false\"\r\n        },\r\n        {\r\n            \"questionId\": \"3659a568-2719-4cec-b42c-9e7e2e488218\",\r\n            \"answer\": \"true\"\r\n        },\r\n        {\r\n            \"questionId\": \"56b09455-33a9-4c41-94e1-86309f092a2d\",\r\n            \"answer\": \"true\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1/consultation",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1",
+								"consultation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Data - Invalid Question ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"answers\": [\r\n        {\r\n            \"questionId\": \"d3be7310-d52a-451a-86f3-a34297216fc8\",\r\n            \"answer\": \"false\"\r\n        },\r\n        {\r\n            \"questionId\": \"fd434b60-9704-499f-8a95-165c9eca29d0\",\r\n            \"answer\": \"false\"\r\n        },\r\n        {\r\n            \"questionId\": \"00000000-0000-0000-0000-000000000000\",\r\n            \"answer\": \"false\"\r\n        },\r\n        {\r\n            \"questionId\": \"3659a568-2719-4cec-b42c-9e7e2e488218\",\r\n            \"answer\": \"true\"\r\n        },\r\n        {\r\n            \"questionId\": \"56b09455-33a9-4c41-94e1-86309f092a2d\",\r\n            \"answer\": \"true\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1/consultation",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1",
+								"consultation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Data - Not all questions answered",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"answers\": [\r\n        {\r\n            \"questionId\": \"d3be7310-d52a-451a-86f3-a34297216fc8\",\r\n            \"answer\": \"false\"\r\n        },\r\n        {\r\n            \"questionId\": \"3659a568-2719-4cec-b42c-9e7e2e488218\",\r\n            \"answer\": \"true\"\r\n        },\r\n        {\r\n            \"questionId\": \"56b09455-33a9-4c41-94e1-86309f092a2d\",\r\n            \"answer\": \"true\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1/consultation",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1",
+								"consultation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Data - Missing all answers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"answers\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/1/consultation",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"1",
+								"consultation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:9090"
+		}
+	]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id" : "d3be7310-d52a-451a-86f3-a34297216fc8",
+    "question" : "Are you over 18?",
+    "expectedAnswer" : true,
+    "rejection" : "You should be over 18 years old to use our service"
+  },
+  {
+    "id" : "fd434b60-9704-499f-8a95-165c9eca29d0",
+    "question" : "Have you used our medicine before?",
+    "expectedAnswer" : null,
+    "rejection" : null
+  },
+  {
+    "id" : "3659a568-2719-4cec-b42c-9e7e2e488218",
+    "question" : "Are you allergic to compound X that is used in our medicines?",
+    "expectedAnswer" : false,
+    "rejection" : "Our medicine could cause allergic reaction"
+  },
+  {
+    "id" : "56b09455-33a9-4c41-94e1-86309f092a2d",
+    "question" : "Do you have an Y condition?",
+    "expectedAnswer" : false,
+    "rejection" : "Our medicine could cause allergic reaction"
+  }
+]
