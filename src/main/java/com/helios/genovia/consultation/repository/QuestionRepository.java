@@ -34,26 +34,24 @@ public class QuestionRepository {
         return questions.stream().filter(this::mandatoryQuestionFilter).toList();
     }
 
-
     private boolean mandatoryQuestionFilter(Question question) {
         return Objects.nonNull(question.expectedAnswer());
     }
 
+    public Set<UUID> getQuestionIds() {
+        return questions.stream()
+                .map(Question::id)
+                .collect(Collectors.toSet());
+    }
 
     private List<Question> loadFromFile(String questionsPath) {
         try {
             File file = ResourceUtils.getFile(questionsPath);
-            return objectMapper.readValue(file, new TypeReference<List<Question>>() {
+            return objectMapper.readValue(file, new TypeReference<>() {
             });
         } catch (IOException e) {
             log.error("Error while processing file", e);
             throw new RuntimeException(e);
         }
-    }
-
-    public  Set<UUID> getQuestionIds() {
-        return questions.stream()
-                .map(Question::id)
-                .collect(Collectors.toSet());
     }
 }

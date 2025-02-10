@@ -75,8 +75,6 @@ public class ConsultationService {
             log.warn("Request contained duplicated answers");
             throw new DuplicateAnswersException(duplicateAnswers);
         }
-
     }
-
 
 }
