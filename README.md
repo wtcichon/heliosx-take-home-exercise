@@ -13,6 +13,6 @@
 ### Shortcuts
 1. To simplify process of handling response, I assumed answers to all questions would be boolean.
 2. Questions are stored in JSON file.
-3. Mandatory questions have expected value to be null.
+3. Mandatory questions have expected value to be not null.
 4. For validation of entity, I used Spring hence I lost ability to have meaningful message 
 5. Reduced amount of Unit tests as most functionality is covered by integration tests
